@@ -1,0 +1,20 @@
+title 0.5 Single Page App
+
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->Browser: text/html
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: text/css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server-->Browser: application/javascript
+note over Browser:
+Browser executes the Javascript file.
+This line requests data.json from server
+xhttp.open("GET", "/exampleapp/data.json", true)
+end note 
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: application/json
+note over Browser:
+Browser stores data in notes array
+Browser redraws the content of the array 
+end note 
