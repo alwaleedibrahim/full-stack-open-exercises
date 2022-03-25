@@ -1,0 +1,25 @@
+title 0.4 New Note
+
+note over Browser:
+When the form is submitted, it sends 
+a request to server using POST method
+end note
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+Server-->Browser: 302 Redirected to /exampleapp/notes 
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->Browser: text/html
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: text/css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->Browser: application/javascript
+note over Browser:
+Browser executes the Javascript file.
+This line requests data.json from server
+xhttp.open("GET", "/exampleapp/data.json", true)
+end note 
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: application/json
+note over Browser:
+Browser renders data.json  
+The new note appears on page
+end note 
