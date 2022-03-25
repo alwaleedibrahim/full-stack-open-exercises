@@ -1,0 +1,28 @@
+title 0.6 New Note
+
+note over Browser:
+When user clicks submit,
+event handler is triggered.
+end note 
+
+note over Browser:
+Note is added into notes array
+end note 
+
+note over Browser:
+Browser redraws the content from notes array 
+end note 
+
+note over Browser:
+sendToServer function is called
+end note 
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+Server-->Browser: application/json: {"message":"note created"}
+
+note right of Browser:
+The browser takes no further action to the server response.
+If the added note didn't make its way to the server for whatever reason,
+the note will be added in the page nonetheless, as the browser only draws
+the notes from notes array. This way the notes on the server may differ.
+end note 
